@@ -4,7 +4,7 @@ export default function Navbar(){
 
 	return(
 		<nav>
-			<div>React Notes</div>
+			<div className="container"> Notes</div>
 		</nav>
 	);
 }

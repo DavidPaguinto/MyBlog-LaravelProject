@@ -1,4 +1,5 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
+import {Container, Row, Col, Button} from 'react-bootstrap';
 import NotesContext from '../context';
 
 export default function AddNote(){
@@ -26,12 +27,12 @@ export default function AddNote(){
 	  };
 	
 	return (
-		<div className='note-form'>
-		<form onSubmit={handleSubmit} action=''>
-		  <input type='text' ref={ref} onChange={handleChange} value={value} />
-		  <button>Add note</button>
+	<div className='note-form'>
+		<form onSubmit={handleSubmit} action='' className="note-addForm">
+			<textarea type='text' ref={ref} onChange={handleChange} value={value} cols="60" rows="5" className="note-textarea"/>
+			<Button className="float-right">Add note</Button>
 		</form>
-	  </div>
+	</div>
 	)
 
 }

@@ -8,7 +8,8 @@ body {
 nav {
   padding: 20px 10px;
   color: white;
-  background: grey;
+  background: #404040;
+  font-size: 20px;
 }
 
 .note-form {
@@ -23,12 +24,9 @@ nav {
   outline: none;
 }
 
-.note-form button {
-  margin-left: 10px;
-  color: white;
-  background: #007bff;
-  padding: 5px 10px;
-  border: none;
+.note-textarea {
+  width: 100%;
+  padding:10px;
 }
 
 /* .container {
@@ -37,6 +35,10 @@ nav {
   justify-content: left;
   padding: 0 20rem;
 } */
+
+.note-addForm {
+  justify-content: center;
+}
 
 .notes-container {
   width: 100%;
