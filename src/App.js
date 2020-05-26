@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useReducer } from 'react';
+import {Container, Row, Col, Button} from 'react-bootstrap';
+import NotesContext from './context';
+import NotesReducer from './reducer';
+import Navbar from './components/Navbar';
+import AddNote from './components/AddNote';
+import NoteList from './components/NoteList';
+import EditNote from './components/EditNote';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const rowStyle = {
+    padding: '10px',
+  };
+
+  const initialState = useContext(NotesContext);
+  const [state, dispatch] = useReducer(NotesReducer,initialState)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NotesContext.Provider value={{state, dispatch}}>
+       <Navbar /> 
+       {state.currentNote === null ? (
+         <Container>
+           <AddNote />
+          <NoteList />
+         </Container>
+       ) : <EditNote /> }
+
+    </NotesContext.Provider>
   );
 }
 
