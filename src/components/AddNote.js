@@ -30,7 +30,7 @@ export default function AddNote(){
 	<div className='note-form'>
 		<form onSubmit={handleSubmit} action='' className="note-addForm">
 			<textarea type='text' ref={ref} onChange={handleChange} value={value} cols="60" rows="5" className="note-textarea"/>
-			<Button className="float-right">Add note</Button>
+			<button className="float-right btn btn-primary">Add note</button>
 		</form>
 	</div>
 	)
